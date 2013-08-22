@@ -47,18 +47,24 @@ zorthan.health = 100
 t_rex = Monster.new("T-Rex")
 t_rex.health = 100
 
-zorthan.attack(t_rex)
-p t_rex.health
-t_rex.attack(zorthan)
-p zorthan.health
+until t_rex.health <= 0
+  zorthan.attack_with_letter(t_rex)
+  p "T-Rex's health is: #{t_rex.health}!"
+  puts
+end
 
-  until zorthan.health <= 0 || t_rex.health <= 0
-    zorthan.attack(t_rex)
-    p "#{t_rex.name}'s health: #{t_rex.health}"
-    t_rex.attack(zorthan)
-    p "#{zorthan.name}'s health: #{zorthan.health}"
-    sleep(0.5)
-  end
+puts "T-Rex is DEAD."
+
+# t_rex.attack(zorthan)
+# p zorthan.health
+
+  # until zorthan.health <= 0 || t_rex.health <= 0
+  #   zorthan.attack(t_rex)
+  #   p "#{t_rex.name}'s health: #{t_rex.health}"
+  #   t_rex.attack(zorthan)
+  #   p "#{zorthan.name}'s health: #{zorthan.health}"
+  #   sleep(0.5)
+  # end
 
 end
 
